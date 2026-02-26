@@ -87,14 +87,15 @@
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 24px;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
         .nav-links a {
             color: var(--muted);
             text-decoration: none;
             transition: color 0.15s ease-in-out;
-            font-size: 0.95rem;
+            font-size: 0.8rem;
         }
 
         .nav-links a:hover {
@@ -219,9 +220,9 @@
             background-color: var(--surface);
             border: 1px solid var(--border);
             border-radius: 8px;
+            text-decoration: none;
             color: var(--text);
             transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
-            cursor: default;
         }
 
         .project-card:hover {
@@ -347,6 +348,8 @@
             100% { box-shadow: 0 0 0 0 rgba(232, 115, 52, 0); }
         }
 
+        
+
         /* Fade up */
         @keyframes fadeUp {
             from { opacity: 0; transform: translateY(20px); }
@@ -371,20 +374,24 @@
         <nav class="fade-up delay-1">
             <a href="/" class="logo">anirudh</a>
             <ul class="nav-links">
-                <li><a href="#projects">projects()</a></li>
-                <li><a href="mailto:aninair06@gmail.com">say(hi)</a></li>
+                <li><a href="#stuff-i-did">achievements</a></li>
+                <li><a href="#what-im-up-to-rn">now</a></li>
+                <li><a href="#projects">projects</a></li>
+                <li><a href="#previous-work">work</a></li>
+                <li><a href="#a-bit-more">about</a></li>
+                <li><a href="/cdn-cgi/l/email-protection#187976717679716a282e587f75797174367b7775">say(hi)</a></li>
             </ul>
         </nav>
 
         <!-- Main Content -->
         <main>
             <section class="hero fade-up delay-2">
-                <h1>ANIRUDH • انيروده • അനിരുദ്ധ്<span class="cursor"></span></h1>
+                <h1>ANIRUDH • अनिरुद्ध • അനിരുദ്ധ്<span class="cursor"></span></h1>
                 <div class="status-pill">
                     <span class="status-dot"></span> seeking summer 2026 internships &amp; research roles
                 </div>
-                <p>Honors ME student at University of Florida (3.91 GPA). UWC Davis Scholar. Co-founding <a href="#projects" style="color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:border-color 0.15s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='transparent'">Zeno</a> while shadowing engineers and studying how viscosity warps vortices. I work at the edge of physical and digital.</p>
-                <a href="mailto:aninair06@gmail.com" class="btn">say(hi)</a>
+                <p>Honors ME student at University of Florida (3.91 GPA). UWC Davis Scholar. Co-founding <a href="https://zeno-us.vercel.app" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:border-color 0.15s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='transparent'">Zeno</a> while shadowing engineers and studying how viscosity warps vortices. I work at the edge of physical and digital.</p>
+                <a href="/cdn-cgi/l/email-protection#63020d0a0d020a11535523040e020a0f4d000c0e" class="btn">say(hi)</a>
             </section>
 
             <!-- Stuff I Did -->
@@ -394,10 +401,11 @@
                     <hr>
                 </div>
                 <ul class="dash-list">
-                    <li>- co-founded Zeno — first in-meeting social intelligence platform, launching March 2026.</li>
                     <li>- awarded the UWC Davis <em>Dare to Dream</em> scholarship — $50,000+ to study abroad in Japan.</li>
-                    <li>- co-authored a research poster published by Chubu University on motor adaptation from prism shifts.</li>
+                    <li>- co-founded <a href="https://zeno-us.vercel.app" target="_blank" rel="noopener" style="color:var(--text);text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.15);">Zeno</a> — first in-meeting social intelligence platform, launching March 2026.</li>
+                    <li>- co-authored a research poster published by Chubu University on motor adaptation &amp; vortex flow.</li>
                     <li>- IB 40/45 (Physics HL 7, Math AA HL 7, Chemistry SL 7). SAT 1520. TOEFL 116/120. IGCSE 9A*s.</li>
+                    <li>- grew UWC ISAK Makers Club by 70%, built &amp; sold handcrafted woodwork, led 3 campus builds.</li>
                     <li>- elected student body rep across 3 grades — negotiated policy changes with administration.</li>
                 </ul>
             </section>
@@ -409,9 +417,9 @@
                     <hr>
                 </div>
                 <ul class="role-list">
-                    <li><a href="#">Zeno</a> — co-founder. building the first in-meeting social intelligence platform. <span style="color:var(--muted);font-size:0.8rem;">Feb 2026 – present</span></li>
-                    <li><a href="#">Dream Team Engineering</a> — shadowing engineer, PCB design, python, AI ML. <span style="color:var(--muted);font-size:0.8rem;">Feb 2026 – present · Gainesville</span></li>
-                    <li><a href="https://ufl.edu" target="_blank" rel="noopener">ufl.edu</a> — B.S. Mechanical Engineering (Hons.), class of 2029. DTE, Aerogators, ASME. <span style="color:var(--muted);font-size:0.8rem;">3.91 GPA</span></li>
+                    <li><a href="https://zeno-us.vercel.app" target="_blank" rel="noopener">Zeno</a> — co-founder. building the first in-meeting social intelligence platform. <span style="color:var(--muted);font-size:0.8rem;">Feb 2026 – present</span></li>
+                    <li><a href="#">Dream Team Engineering</a> — shadowing engineer, PCB design. <span style="color:var(--muted);font-size:0.8rem;">Feb 2026 – present · Gainesville</span></li>
+                    <li><a href="https://ufl.edu" target="_blank" rel="noopener">ufl.edu</a> — B.S. Mechanical Engineering (Hons.), class of 2029. Aerogators, ASME. <span style="color:var(--muted);font-size:0.8rem;">3.91 GPA</span></li>
                 </ul>
             </section>
 
@@ -422,48 +430,48 @@
                     <hr>
                 </div>
                 <div class="project-grid">
-                    <div class="project-card">
+                    <a href="https://zeno-us.vercel.app" target="_blank" rel="noopener" class="project-card">
                         <div class="project-info">
                             <h3>Zeno</h3>
                             <p>Real-time AI meeting intelligence — live feedback for interviews &amp; sales calls. TypeScript, React, Python, Tailwind.</p>
                         </div>
                         <span class="arrow">→</span>
-                    </div>
-                    <div class="project-card">
+                    </a>
+                    <a href="#" class="project-card">
                         <div class="project-info">
                             <h3>Medical Syringe Assembly</h3>
                             <p>Functional CAD model balancing mechanical precision with ergonomics. Nanometer-level tolerances. SolidWorks.</p>
                         </div>
                         <span class="arrow">→</span>
-                    </div>
-                    <div class="project-card">
+                    </a>
+                    <a href="#" class="project-card">
                         <div class="project-info">
                             <h3>Dobsonian Telescope</h3>
                             <p>Designed and fabricated the full base assembly for a Dobsonian telescope. Fusion 360. AeroGator club.</p>
                         </div>
                         <span class="arrow">→</span>
-                    </div>
-                    <div class="project-card">
+                    </a>
+                    <a href="#" class="project-card">
                         <div class="project-info">
                             <h3>Automated Data Analysis Tool</h3>
                             <p>End-to-end Python pipeline — ingestion, statistical analysis, Matplotlib charts, auto PDF reports via ReportLab.</p>
                         </div>
                         <span class="arrow">→</span>
-                    </div>
-                    <div class="project-card">
+                    </a>
+                    <a href="#" class="project-card">
                         <div class="project-info">
                             <h3>Traditional Joinery Construction</h3>
                             <p>Built a fence &amp; table in Karuizawa using only friction fits and bamboo lashing — no modern fasteners. With Dr. Ruben.</p>
                         </div>
                         <span class="arrow">→</span>
-                    </div>
-                    <div class="project-card">
+                    </a>
+                    <a href="#" class="project-card">
                         <div class="project-info">
                             <h3>Vortex Flow Research</h3>
                             <p>Studied how viscosity affects mass and volumetric flow rates in vortices. Reinforced boundary layer theorem.</p>
                         </div>
                         <span class="arrow">→</span>
-                    </div>
+                    </a>
                 </div>
             </section>
 
@@ -489,7 +497,7 @@
                 </div>
                 <div class="prose">
                     <p>grew up in bangalore, india. at 16, got a $50k scholarship to study at a mountain boarding school in japan with students from 80+ countries. spent two years doing neuroscience research, building furniture with traditional japanese joinery, and learning what accountability looks like across cultures.</p>
-                    <p>now at UF, i split time between engineering, co-founding Zeno with Shivank Mahajan, and shadowing engineers doing PCB design at Dream Team. i thrive in high-pressure environments and care about the broader impact of what i build — not just whether it works, but whether it matters.</p>
+                    <p>now at UF, i split time between engineering, co-founding <a href="https://zeno-us.vercel.app" target="_blank" rel="noopener" style="color:var(--text);text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.15);">Zeno</a> with Shivank Mahajan, and shadowing engineers doing PCB design at Dream Team. i thrive in high-pressure environments and care about the broader impact of what i build — not just whether it works, but whether it matters.</p>
                     <p>languages: english &amp; malayalam (native) · german &amp; spanish (working proficiency).</p>
                 </div>
             </section>
@@ -501,15 +509,5 @@
                 <p>&copy; <span id="year"></span> Anirudh</p>
                 <div class="social-links">
                     <a href="https://linkedin.com/in/anirudh-nair-5b385b303" target="_blank" rel="noopener noreferrer">linkedin</a>
-                    <a href="mailto:aninair06@gmail.com">email</a>
+                    <a href="/cdn-cgi/l/email-protection#8beae5e2e5eae2f9bbbdcbece6eae2e7a5e8e4e6">email</a>
                 </div>
-            </div>
-        </footer>
-
-    </div>
-
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-</body>
-</html>
