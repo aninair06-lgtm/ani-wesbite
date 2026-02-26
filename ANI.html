@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anirudh Nair</title>
+    <meta name="description" content="Anirudh Nair — ME student at UF, co-founder of Zeno, researcher.">
+    <style>
+        @font-face {
+            font-family: 'Berkeley Mono';
+            src: url('BerkeleyMono-Regular.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Berkeley Mono';
+            src: url('BerkeleyMono-Bold.woff2') format('woff2');
+            font-weight: bold;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        :root {
+            --bg:         #0D0D0D;
+            --surface:    #161616;
+            --text:       #EDEBE3;
+            --muted:      #7a7470;
+            --border:     rgba(255, 255, 255, 0.08);
+            --accent:     #E87334;
+            --font-stack: 'Berkeley Mono', 'JetBrains Mono', ui-monospace, monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: var(--font-stack);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        ::selection {
+            background-color: rgba(232, 115, 52, 0.3);
+            color: #ffffff;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 48px 0 32px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 1.25rem;
+            color: var(--text);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            text-decoration: none;
+            transition: color 0.15s ease-in-out;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--text);
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 24px;
+            line-height: 1.3;
+            font-weight: 500;
+            letter-spacing: -0.03em;
+            color: var(--text);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            color: var(--muted);
+            max-width: 540px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 12px 28px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: opacity 0.15s ease, transform 0.1s ease;
+        }
+
+        .btn:hover { opacity: 0.85; }
+        .btn:active { transform: translateY(1px); }
+
+        /* Content Sections */
+        .content-section {
+            margin-bottom: 64px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .section-header h2 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--accent);
+            white-space: nowrap;
+            font-weight: 600;
+        }
+
+        .section-header hr {
+            flex: 1;
+            border: none;
+            border-top: 1px solid var(--border);
+        }
+
+        /* Lists */
+        .dash-list {
+            list-style: none;
+            color: var(--text);
+        }
+
+        .dash-list li {
+            margin-bottom: 12px;
+        }
+
+        .role-list {
+            list-style: none;
+        }
+
+        .role-list li {
+            margin-bottom: 12px;
+            color: var(--muted);
+        }
+
+        .role-list a {
+            color: var(--text);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border);
+            transition: all 0.15s ease;
+            font-weight: 500;
+        }
+
+        .role-list a:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Project Grid */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+        }
+
+        .project-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+            cursor: default;
+        }
+
+        .project-card:hover {
+            background-color: #1e1e1e;
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .project-info h3 {
+            font-size: 1rem;
+            margin-bottom: 4px;
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        .project-info p {
+            font-size: 0.9rem;
+            color: var(--muted);
+            margin: 0;
+        }
+
+        .arrow {
+            font-size: 1.2rem;
+            transition: transform 0.2s ease;
+            color: var(--muted);
+        }
+
+        .project-card:hover .arrow {
+            transform: translateX(4px);
+            color: var(--accent);
+        }
+
+        /* Prose */
+        .prose p {
+            color: var(--text);
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            margin-top: auto;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-links a {
+            color: var(--muted);
+            text-decoration: none;
+            transition: color 0.15s ease-in-out;
+        }
+
+        .social-links a:hover {
+            color: var(--text);
+        }
+
+        /* Responsive */
+        @media (max-width: 500px) {
+            .hero h1 { font-size: 2rem; }
+            .nav-links { gap: 16px; }
+            .footer-content {
+                flex-direction: column;
+                gap: 16px;
+                align-items: flex-start;
+            }
+        }
+
+        /* Cursor */
+        .cursor {
+            display: inline-block;
+            width: 0.6em;
+            height: 1.1em;
+            background-color: var(--accent);
+            vertical-align: middle;
+            margin-left: 2px;
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50%       { opacity: 0; }
+        }
+
+        /* Status pill */
+        .status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            color: var(--text);
+            margin-bottom: 24px;
+            width: fit-content;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%   { box-shadow: 0 0 0 0 rgba(232, 115, 52, 0.7); }
+            70%  { box-shadow: 0 0 0 6px rgba(232, 115, 52, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(232, 115, 52, 0); }
+        }
+
+        /* Fade up */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-up {
+            opacity: 0;
+            animation: fadeUp 0.6s ease-out forwards;
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Navigation -->
+        <nav class="fade-up delay-1">
+            <a href="/" class="logo">anirudh</a>
+            <ul class="nav-links">
+                <li><a href="#projects">projects()</a></li>
+                <li><a href="mailto:aninair06@gmail.com">say(hi)</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main>
+            <section class="hero fade-up delay-2">
+                <h1>ANIRUDH • अनिरुद्ध • അനിരുദ്ധ്<span class="cursor"></span></h1>
+                <div class="status-pill">
+                    <span class="status-dot"></span> seeking summer 2026 internships &amp; research roles
+                </div>
+                <p>Honors ME student at University of Florida (3.91 GPA). UWC Davis Scholar. Co-founding <a href="#projects" style="color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:border-color 0.15s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='transparent'">Zeno</a> while shadowing engineers and studying how viscosity warps vortices. I work at the edge of physical and digital.</p>
+                <a href="mailto:aninair06@gmail.com" class="btn">say(hi)</a>
+            </section>
+
+            <!-- Stuff I Did -->
+            <section class="content-section" id="stuff-i-did">
+                <div class="section-header">
+                    <h2>STUFF I DID</h2>
+                    <hr>
+                </div>
+                <ul class="dash-list">
+                    <li>- co-founded Zeno — first in-meeting social intelligence platform, launching March 2026.</li>
+                    <li>- awarded the UWC Davis <em>Dare to Dream</em> scholarship — $50,000+ to study abroad in Japan.</li>
+                    <li>- co-authored a research poster published by Chubu University on motor adaptation from prism shifts.</li>
+                    <li>- IB 40/45 (Physics HL 7, Math AA HL 7, Chemistry SL 7). SAT 1520. TOEFL 116/120. IGCSE 9A*s.</li>
+                    <li>- elected student body rep across 3 grades — negotiated policy changes with administration.</li>
+                </ul>
+            </section>
+
+            <!-- What I'm up to rn -->
+            <section class="content-section" id="what-im-up-to-rn">
+                <div class="section-header">
+                    <h2>WHAT I'M UP TO RN</h2>
+                    <hr>
+                </div>
+                <ul class="role-list">
+                    <li><a href="#">Zeno</a> — co-founder. building the first in-meeting social intelligence platform. <span style="color:var(--muted);font-size:0.8rem;">Feb 2026 – present</span></li>
+                    <li><a href="#">Dream Team Engineering</a> — shadowing engineer, PCB design, python, AI ML. <span style="color:var(--muted);font-size:0.8rem;">Feb 2026 – present · Gainesville</span></li>
+                    <li><a href="https://ufl.edu" target="_blank" rel="noopener">ufl.edu</a> — B.S. Mechanical Engineering (Hons.), class of 2029. DTE, Aerogators, ASME. <span style="color:var(--muted);font-size:0.8rem;">3.91 GPA</span></li>
+                </ul>
+            </section>
+
+            <!-- Projects -->
+            <section class="content-section" id="projects">
+                <div class="section-header">
+                    <h2>PROJECTS</h2>
+                    <hr>
+                </div>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <div class="project-info">
+                            <h3>Zeno</h3>
+                            <p>Real-time AI meeting intelligence — live feedback for interviews &amp; sales calls. TypeScript, React, Python, Tailwind.</p>
+                        </div>
+                        <span class="arrow">→</span>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-info">
+                            <h3>Medical Syringe Assembly</h3>
+                            <p>Functional CAD model balancing mechanical precision with ergonomics. Nanometer-level tolerances. SolidWorks.</p>
+                        </div>
+                        <span class="arrow">→</span>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-info">
+                            <h3>Dobsonian Telescope</h3>
+                            <p>Designed and fabricated the full base assembly for a Dobsonian telescope. Fusion 360. AeroGator club.</p>
+                        </div>
+                        <span class="arrow">→</span>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-info">
+                            <h3>Automated Data Analysis Tool</h3>
+                            <p>End-to-end Python pipeline — ingestion, statistical analysis, Matplotlib charts, auto PDF reports via ReportLab.</p>
+                        </div>
+                        <span class="arrow">→</span>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-info">
+                            <h3>Traditional Joinery Construction</h3>
+                            <p>Built a fence &amp; table in Karuizawa using only friction fits and bamboo lashing — no modern fasteners. With Dr. Ruben.</p>
+                        </div>
+                        <span class="arrow">→</span>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-info">
+                            <h3>Vortex Flow Research</h3>
+                            <p>Studied how viscosity affects mass and volumetric flow rates in vortices. Reinforced boundary layer theorem.</p>
+                        </div>
+                        <span class="arrow">→</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Previous Work -->
+            <section class="content-section" id="previous-work">
+                <div class="section-header">
+                    <h2>PREVIOUS WORK</h2>
+                    <hr>
+                </div>
+                <ul class="role-list">
+                    <li><a href="#">Chubu University, Cybernetics Lab</a> — neuroscience researcher, 300+ datasets, published poster. <span style="color:var(--muted);font-size:0.8rem;">Nagoya · 2023–2025</span></li>
+                    <li><a href="#">UWC ISAK Japan, Makers Club</a> — co-leader, fabrication workshops, woodwork sales, 3 infrastructure builds. <span style="color:var(--muted);font-size:0.8rem;">Karuizawa · 2023–2025</span></li>
+                    <li><a href="#">Student Council, UWC ISAK Japan</a> — community agreements rep, elected across 3 grades. <span style="color:var(--muted);font-size:0.8rem;">2024</span></li>
+                    <li><a href="#">The International School Bangalore</a> — IGCSE, 9A*s. Track &amp; Field, Tutoring Services. <span style="color:var(--muted);font-size:0.8rem;">2021–2023</span></li>
+                </ul>
+            </section>
+
+            <!-- A Bit More -->
+            <section class="content-section" id="a-bit-more">
+                <div class="section-header">
+                    <h2>A BIT MORE</h2>
+                    <hr>
+                </div>
+                <div class="prose">
+                    <p>grew up in bangalore, india. at 16, got a $50k scholarship to study at a mountain boarding school in japan with students from 80+ countries. spent two years doing neuroscience research, building furniture with traditional japanese joinery, and learning what accountability looks like across cultures.</p>
+                    <p>now at UF, i split time between engineering, co-founding Zeno with Shivank Mahajan, and shadowing engineers doing PCB design at Dream Team. i thrive in high-pressure environments and care about the broader impact of what i build — not just whether it works, but whether it matters.</p>
+                    <p>languages: english &amp; malayalam (native) · german &amp; spanish (working proficiency).</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="fade-up delay-3">
+            <div class="footer-content">
+                <p>&copy; <span id="year"></span> Anirudh</p>
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/anirudh-nair-5b385b303" target="_blank" rel="noopener noreferrer">linkedin</a>
+                    <a href="mailto:aninair06@gmail.com">email</a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
