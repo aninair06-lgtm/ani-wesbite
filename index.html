@@ -220,9 +220,14 @@
             background-color: var(--surface);
             border: 1px solid var(--border);
             border-radius: 8px;
-            text-decoration: none;
             color: var(--text);
             transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+            cursor: default;
+            text-decoration: none;
+        }
+
+        .project-card.clickable {
+            cursor: pointer;
         }
 
         .project-card:hover {
@@ -348,8 +353,6 @@
             100% { box-shadow: 0 0 0 0 rgba(232, 115, 52, 0); }
         }
 
-        
-
         /* Fade up */
         @keyframes fadeUp {
             from { opacity: 0; transform: translateY(20px); }
@@ -364,6 +367,49 @@
         .delay-1 { animation-delay: 0.1s; }
         .delay-2 { animation-delay: 0.2s; }
         .delay-3 { animation-delay: 0.3s; }
+
+        /* Tooltip */
+        .tooltip {
+            position: relative;
+            border-bottom: 1px dotted var(--muted);
+            cursor: help;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: var(--surface);
+            color: var(--text);
+            text-align: left;
+            border-radius: 6px;
+            padding: 8px 12px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            border: 1px solid var(--border);
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+
+        .tooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: var(--surface) transparent transparent transparent;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
     </style>
 </head>
 
@@ -379,19 +425,19 @@
                 <li><a href="#projects">projects</a></li>
                 <li><a href="#previous-work">work</a></li>
                 <li><a href="#a-bit-more">about</a></li>
-                <li><a href="/cdn-cgi/l/email-protection#187976717679716a282e587f75797174367b7775">say(hi)</a></li>
+                <li><a href="mailto:aninair06@gmail.com">say(hi)</a></li>
             </ul>
         </nav>
 
         <!-- Main Content -->
         <main>
             <section class="hero fade-up delay-2">
-                <h1>ANIRUDH • अनिरुद्ध • അനിരുദ്ധ്<span class="cursor"></span></h1>
+                <h1>ANIRUDH • അനിരുദ്ധ് • انيروده <span class="cursor"></span></h1>
                 <div class="status-pill">
                     <span class="status-dot"></span> seeking summer 2026 internships &amp; research roles
                 </div>
-                <p>Honors ME student at University of Florida (3.91 GPA). UWC Davis Scholar. Co-founding <a href="https://zeno-us.vercel.app" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:border-color 0.15s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='transparent'">Zeno</a> while shadowing engineers and studying how viscosity warps vortices. I work at the edge of physical and digital.</p>
-                <a href="/cdn-cgi/l/email-protection#63020d0a0d020a11535523040e020a0f4d000c0e" class="btn">say(hi)</a>
+                <p>i'm a 19y/o honors ME student at UF (3.91 GPA). UWC Davis Scholar. co-founding <a href="https://zeno-us.vercel.app" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:border-color 0.15s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='transparent'">Zeno</a> while shadowing PCB engineers and studying how viscosity warps vortices. i work at the edge of physical and digital.</p>
+                <a href="mailto:aninair06@gmail.com" class="btn">say(hi)</a>
             </section>
 
             <!-- Stuff I Did -->
@@ -401,12 +447,12 @@
                     <hr>
                 </div>
                 <ul class="dash-list">
-                    <li>- awarded the UWC Davis <em>Dare to Dream</em> scholarship — $50,000+ to study abroad in Japan.</li>
-                    <li>- co-founded <a href="https://zeno-us.vercel.app" target="_blank" rel="noopener" style="color:var(--text);text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.15);">Zeno</a> — first in-meeting social intelligence platform, launching March 2026.</li>
-                    <li>- co-authored a research poster published by Chubu University on motor adaptation &amp; vortex flow.</li>
-                    <li>- IB 40/45 (Physics HL 7, Math AA HL 7, Chemistry SL 7). SAT 1520. TOEFL 116/120. IGCSE 9A*s.</li>
-                    <li>- grew UWC ISAK Makers Club by 70%, built &amp; sold handcrafted woodwork, led 3 campus builds.</li>
-                    <li>- elected student body rep across 3 grades — negotiated policy changes with administration.</li>
+                    <li>- $50k+ UWC Davis <em>Dare to Dream</em> scholarship — beat 1000+ applicants to study in Japan.</li>
+                    <li>- co-founded <a href="https://zeno-us.vercel.app" target="_blank" rel="noopener" style="color:var(--text);text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.15);">Zeno</a> — in-meeting social intelligence. launching March 2026.</li>
+                    <li>- published research on motor adaptation &amp; prism shifts @ Chubu Cybernetics Lab — 300+ datasets.</li>
+                    <li>- grew Makers Club 70% — led 3 pro bono campus builds, sold handcrafted furniture to fund materials.</li>
+                    <li>- elected student body rep 3x — negotiated policy wins with admin (extended work hours, tool access).</li>
+                    <li>- IB 40/45 (Physics HL 7, Math AA HL 7). SAT 1520. TOEFL 116. IGCSE 9A*s.</li>
                 </ul>
             </section>
 
@@ -417,8 +463,8 @@
                     <hr>
                 </div>
                 <ul class="role-list">
-                    <li><a href="https://zeno-us.vercel.app" target="_blank" rel="noopener">Zeno</a> — co-founder. building the first in-meeting social intelligence platform. <span style="color:var(--muted);font-size:0.8rem;">Feb 2026 – present</span></li>
-                    <li><a href="#">Dream Team Engineering</a> — shadowing engineer, PCB design. <span style="color:var(--muted);font-size:0.8rem;">Feb 2026 – present · Gainesville</span></li>
+                    <li><a href="https://zeno-us.vercel.app" target="_blank" rel="noopener">Zeno</a> — co-founder. first in-meeting social intelligence platform. <span style="color:var(--muted);font-size:0.8rem;">Feb 2026 – present</span></li>
+                    <li><a href="https://www.dreamteameng.org" target="_blank" rel="noopener">Dream Team Engineering</a> — shadowing engineer on PCB design, python automation, ML. <span style="color:var(--muted);font-size:0.8rem;">Feb 2026 – present · Gainesville</span></li>
                     <li><a href="https://ufl.edu" target="_blank" rel="noopener">ufl.edu</a> — B.S. Mechanical Engineering (Hons.), class of 2029. Aerogators, ASME. <span style="color:var(--muted);font-size:0.8rem;">3.91 GPA</span></li>
                 </ul>
             </section>
@@ -430,48 +476,48 @@
                     <hr>
                 </div>
                 <div class="project-grid">
-                    <a href="https://zeno-us.vercel.app" target="_blank" rel="noopener" class="project-card">
+                    <a href="https://zeno-us.vercel.app" target="_blank" rel="noopener" class="project-card clickable">
                         <div class="project-info">
                             <h3>Zeno</h3>
                             <p>Real-time AI meeting intelligence — live feedback for interviews &amp; sales calls. TypeScript, React, Python, Tailwind.</p>
                         </div>
                         <span class="arrow">→</span>
                     </a>
-                    <a href="#" class="project-card">
+                    <div class="project-card">
                         <div class="project-info">
                             <h3>Medical Syringe Assembly</h3>
                             <p>Functional CAD model balancing mechanical precision with ergonomics. Nanometer-level tolerances. SolidWorks.</p>
                         </div>
                         <span class="arrow">→</span>
-                    </a>
-                    <a href="#" class="project-card">
+                    </div>
+                    <div class="project-card">
                         <div class="project-info">
                             <h3>Dobsonian Telescope</h3>
                             <p>Designed and fabricated the full base assembly for a Dobsonian telescope. Fusion 360. AeroGator club.</p>
                         </div>
                         <span class="arrow">→</span>
-                    </a>
-                    <a href="#" class="project-card">
+                    </div>
+                    <div class="project-card">
                         <div class="project-info">
                             <h3>Automated Data Analysis Tool</h3>
                             <p>End-to-end Python pipeline — ingestion, statistical analysis, Matplotlib charts, auto PDF reports via ReportLab.</p>
                         </div>
                         <span class="arrow">→</span>
-                    </a>
-                    <a href="#" class="project-card">
+                    </div>
+                    <div class="project-card">
                         <div class="project-info">
                             <h3>Traditional Joinery Construction</h3>
                             <p>Built a fence &amp; table in Karuizawa using only friction fits and bamboo lashing — no modern fasteners. With Dr. Ruben.</p>
                         </div>
                         <span class="arrow">→</span>
-                    </a>
-                    <a href="#" class="project-card">
+                    </div>
+                    <div class="project-card">
                         <div class="project-info">
                             <h3>Vortex Flow Research</h3>
                             <p>Studied how viscosity affects mass and volumetric flow rates in vortices. Reinforced boundary layer theorem.</p>
                         </div>
                         <span class="arrow">→</span>
-                    </a>
+                    </div>
                 </div>
             </section>
 
@@ -482,10 +528,10 @@
                     <hr>
                 </div>
                 <ul class="role-list">
-                    <li><a href="#">Chubu University, Cybernetics Lab</a> — neuroscience researcher, 300+ datasets, published poster. <span style="color:var(--muted);font-size:0.8rem;">Nagoya · 2023–2025</span></li>
-                    <li><a href="#">UWC ISAK Japan, Makers Club</a> — co-leader, fabrication workshops, woodwork sales, 3 infrastructure builds. <span style="color:var(--muted);font-size:0.8rem;">Karuizawa · 2023–2025</span></li>
-                    <li><a href="#">Student Council, UWC ISAK Japan</a> — community agreements rep, elected across 3 grades. <span style="color:var(--muted);font-size:0.8rem;">2024</span></li>
-                    <li><a href="#">The International School Bangalore</a> — IGCSE, 9A*s. Track &amp; Field, Tutoring Services. <span style="color:var(--muted);font-size:0.8rem;">2021–2023</span></li>
+                    <li><a href="#">Chubu University, Cybernetics Lab</a> — neuroscience researcher, 300+ datasets, published poster on motor adaptation. <span style="color:var(--muted);font-size:0.8rem;">Nagoya · 2023–2025</span></li>
+                    <li><a href="#">UWC ISAK Japan, Makers Club</a> — co-leader, ran fabrication workshops, sold woodwork, built campus infrastructure. <span style="color:var(--muted);font-size:0.8rem;">Karuizawa · 2023–2025</span></li>
+                    <li><a href="#">Student Council, UWC ISAK Japan</a> — community agreements rep, elected 3 years running. <span style="color:var(--muted);font-size:0.8rem;">2024</span></li>
+                    <li><a href="#">The International School Bangalore</a> — IGCSE, 9A*s. Track &amp; Field, Tutoring. <span style="color:var(--muted);font-size:0.8rem;">2021–2023</span></li>
                 </ul>
             </section>
 
@@ -496,8 +542,9 @@
                     <hr>
                 </div>
                 <div class="prose">
-                    <p>grew up in bangalore, india. at 16, got a $50k scholarship to study at a mountain boarding school in japan with students from 80+ countries. spent two years doing neuroscience research, building furniture with traditional japanese joinery, and learning what accountability looks like across cultures.</p>
-                    <p>now at UF, i split time between engineering, co-founding <a href="https://zeno-us.vercel.app" target="_blank" rel="noopener" style="color:var(--text);text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.15);">Zeno</a> with Shivank Mahajan, and shadowing engineers doing PCB design at Dream Team. i thrive in high-pressure environments and care about the broader impact of what i build — not just whether it works, but whether it matters.</p>
+                    <p><span class="tooltip">TCK<span class="tooltiptext">third culture kid<br>/an individual who spends a significant part of their developmental years outside their parents' passport culture(s)/</span></span> — kuwait, bangalore, muscat, karuizawa. at 16, got $50k to study at a boarding school in Mt Asama with kids from 80+ countries. spent two years analyzing neural motor adaptation datasets, learning traditional Japanese woodwork, and discovering that good engineering transcends language.</p>
+                    <p>my parents always thought i'd end up as a doctor or lawyer. instead, i spent high school sneaking into the woodshop after curfew to build furniture nobody asked for. got caught once by campus security at 2am cutting dovetail joints — they just sighed and asked me to sweep up when i was done.</p>
+                    <p>now at UF, splitting time between thermodynamics problem sets, building <a href="https://zeno-us.vercel.app" target="_blank" rel="noopener" style="color:var(--text);text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.15);">Zeno</a> with Shivank, and learning PCB design at Dream Team. i care about the broader impact of what i build — not just whether it works, but whether it matters.</p>
                     <p>languages: english &amp; malayalam (native) · german &amp; spanish (working proficiency).</p>
                 </div>
             </section>
@@ -509,5 +556,15 @@
                 <p>&copy; <span id="year"></span> Anirudh</p>
                 <div class="social-links">
                     <a href="https://linkedin.com/in/anirudh-nair-5b385b303" target="_blank" rel="noopener noreferrer">linkedin</a>
-                    <a href="/cdn-cgi/l/email-protection#8beae5e2e5eae2f9bbbdcbece6eae2e7a5e8e4e6">email</a>
+                    <a href="mailto:aninair06@gmail.com">email</a>
                 </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
