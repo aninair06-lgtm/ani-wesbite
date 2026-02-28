@@ -434,7 +434,7 @@
             <section class="hero fade-up delay-2">
                 <h1>ANIRUDH • അനിരുദ്ധ് • انيروده <span class="cursor"></span></h1>
                 <div class="status-pill">
-                    <span class="status-dot"></span> seeking summer 2026 internships &amp; research roles
+                    <span class="status-dot"></span> <span id="status-text">seeking summer 2026 internships &amp; research roles</span>
                 </div>
                 <p>i'm a 19y/o honors ME student at UF (3.91 GPA). UWC Davis Scholar. co-founding <a href="https://zeno-us.vercel.app" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:border-color 0.15s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='transparent'">Zeno</a> while shadowing engineers at DTE working on everything from ML to PCB.</p>
                 <a href="mailto:aninair06@gmail.com" class="btn">say(hi)</a>
@@ -566,6 +566,22 @@
     </div>
 
     <script>
+        // Random status messages
+        const statusMessages = [
+            'seeking summer 2026 internships & research roles',
+            'building at the intersection of hardware & software',
+            'might be asleep',
+            'open to ambitious projects & collaborations',
+            'celsius-powered engineering student',
+            'turning ideas into CAD models & code',
+            'available for summer 2026 opportunities'
+        ];
+        
+        // Pick random message on page load
+        const randomMessage = statusMessages[Math.floor(Math.random() * statusMessages.length)];
+        document.getElementById('status-text').textContent = randomMessage;
+        
+        // Set copyright year
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 </body>
